@@ -1,0 +1,11 @@
+%ul.nav
+  %li.dropdown
+    - if menu_branch.children.blank?
+      = link_to menu_branch.title, refinery.url_for(menu_branch.url)
+    - else
+      %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+        = menu_branch.title
+        %b.caret
+      %ul.dropdown-menu
+        - menu_branch.children.each do |submenu|
+          %li= link_to submenu.title, refinery.url_for(submenu.url)

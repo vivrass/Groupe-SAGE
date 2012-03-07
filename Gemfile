@@ -6,6 +6,7 @@ gem 'rails', '3.2.2'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'haml'
 
 
 # Gems used only for assets and not required
@@ -18,6 +19,7 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+  gem "twitter-bootstrap-rails"
 end
 
 gem 'jquery-rails'
@@ -39,10 +41,10 @@ gem 'jquery-rails'
 
 
 # Refinery CMS
-gem 'refinerycms', '~> 2.0.0'
+gem 'refinerycms', :git => "https://github.com/resolve/refinerycms.git" # '~> 2.0.0'
 
 # Specify additional Refinery CMS Extensions here (all optional):
-gem 'refinerycms-i18n',   '~> 2.0.0'
+gem 'refinerycms-i18n', :git => "https://github.com/parndt/refinerycms-i18n.git" #  '~> 2.0.0'
 #  gem 'refinerycms-blog', '~> 2.0.0'
 #  gem 'refinerycms-inquiries', '~> 2.0.0'
 #  gem 'refinerycms-search', '~> 2.0.0'
