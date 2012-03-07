@@ -32,7 +32,16 @@
   <body>
 
     <div class="navbar navbar-fixed-top">
-      <%#= render('/refinery/site_bar', :head => true) -%>
+      <div class="controls">
+        <% if refinery_user? %>
+          <div id='editor_switch'>
+            <%= link_to I18n.t("refinery.site_bar.switch_to_your_website_editor"), "/refinery/pages" %>
+          </div>
+          <%= link_to I18n.t("refinery.site_bar.log_out"), refinery.destroy_refinery_user_session_path %>
+        <% else %>
+          <%= link_to "Me connecter", "/refinery/login" %>
+        <% end %>
+      </div>
       <div class="navbar-inner">
           <div class="container">
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
@@ -40,10 +49,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <%= link_to "#{image_tag("sage_logo.png", size: "25x25")} SAGE".html_safe, "/", class: :brand %>
+          <%= link_to "#{image_tag("sage_logo.png")} SAGE".html_safe, "/", class: :brand %>
           <div class="container nav-collapse">
             <%= render '/refinery/menu' %>
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
     </div>
